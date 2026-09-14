@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Registration Form</title>
+</head>
+
+<body>
+
+    <h1>Advanced Registration Form</h1>
+
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName"
+                   placeholder="Enter your first name" required>
+
+            <br><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName"
+                   placeholder="Enter your last name" required>
+
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"
+                   placeholder="example@gmail.com" required>
+
+            <br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="Enter 10 digit number"
+                   pattern="[0-9]{10}" required>
+
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <br><br>
+
+            <label>Gender:</label>
+
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Account Information</legend>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"
+                   minlength="4"
+                   maxlength="20"
+                   placeholder="Choose a username"
+                   required>
+
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"
+                   minlength="8"
+                   placeholder="Minimum 8 characters"
+                   required>
+
+            <br><br>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password"
+                   id="confirmPassword"
+                   name="confirmPassword"
+                   required>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Education</legend>
+
+            <label for="course">Course:</label>
+
+            <select id="course" name="course" required>
+                <option value="">Select your course</option>
+                <option value="cse">Computer Science</option>
+                <option value="it">Information Technology</option>
+                <option value="ece">Electronics</option>
+                <option value="me">Mechanical</option>
+                <option value="ce">Civil</option>
+            </select>
+
+            <br><br>
+
+            <label for="year">Current Year:</label>
+
+            <select id="year" name="year">
+                <option value="1">First Year</option>
+                <option value="2">Second Year</option>
+                <option value="3">Third Year</option>
+                <option value="4">Fourth Year</option>
+            </select>
+
+            <br><br>
+
+            <label for="university"> university Name:</label>
+            <input type="text"
+                   id="university"
+                   name="university"
+                   placeholder="Enter university name">
+
+                   <select>
+
+           <br><br>        
+
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Skills</legend>
+
+            <p>Select your skills:</p>
+
+            <input type="checkbox" id="html" name="skills" value="html">
+            <label for="html">HTML</label>
+
+            <input type="checkbox" id="css" name="skills" value="css">
+            <label for="css">CSS</label>
+
+            <input type="checkbox" id="javascript" name="skills" value="javascript">
+            <label for="javascript">JavaScript</label>
+
+            <input type="checkbox" id="python" name="skills" value="python">
+            <label for="python">Python</label>
+
+            <input type="checkbox" id="cpp" name="skills" value="cpp">
+            <label for="cpp">C++</label>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Address</legend>
+
+            <label for="address">Full Address:</label>
+            <br>
+
+            <textarea id="address"
+                      name="address"
+                      rows="5"
+                      cols="50"
+                      placeholder="Enter your complete address"
+                      required></textarea>
+
+            <br><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+
+            <br><br>
+
+            <label for="state">State:</label>
+
+            <select id="state" name="state">
+                <option value="">Select State</option>
+                <option value="up">Uttar Pradesh</option>
+                <option value="delhi">Delhi</option>
+                <option value="bihar">Bihar</option>
+                <option value="mp">Madhya Pradesh</option>
+                <option value="rajasthan">Rajasthan</option>
+            </select>
+
+            <br><br>
+
+            <label for="pincode">PIN Code:</label>
+            <input type="text"
+                   id="pincode"
+                   name="pincode"
+                   pattern="[0-9]{6}"
+                   placeholder="6 digit PIN">
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Documents</legend>
+
+            <label for="photo">Profile Photo:</label>
+            <input type="file"
+                   id="photo"
+                   name="photo"
+                   accept="image/*">
+
+            <br><br>
+
+            <label for="resume">Resume:</label>
+            <input type="file"
+                   id="resume"
+                   name="resume"
+                   accept=".pdf,.doc,.docx">
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>About Yourself</legend>
+
+            <label for="about">Tell us about yourself:</label>
+            <br>
+
+            <textarea id="about"
+                      name="about"
+                      rows="6"
+                      cols="60"
+                      maxlength="500"
+                      placeholder="Write about yourself..."></textarea>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Preferences</legend>
+
+            <label for="website">Personal Website:</label>
+            <input type="url"
+                   id="website"
+                   name="website"
+                   placeholder="https://example.com">
+
+            <br><br>
+
+            <label for="interviewDate">Preferred Interview Date:</label>
+            <input type="datetime-local"
+                   id="interviewDate"
+                   name="interviewDate">
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Confirmation</legend>
+
+            <input type="checkbox"
+                   id="terms"
+                   name="terms"
+                   required>
+
+            <label for="terms">
+                I agree to the terms and conditions.
+            </label>
+
+            <br><br>
+
+            <input type="checkbox"
+                   id="notifications"
+                   name="notifications">
+
+            <label for="notifications">
+                I want to receive notifications.
+            </label>
+
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset Form">
+
+    </form>
+
+</body>
+</html>
