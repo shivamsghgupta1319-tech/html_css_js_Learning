@@ -1,31 +1,7 @@
-/*h1{
-    background-color: red;
-    color: aqua;
-
-}*/
-
-/*.heading{
-    background-color: aqua;
-    color: blue;
+.red{
+color: blue;
 }
 
-p{
-    background-color: blueviolet;
-    color: burlywood;
-}
-button{
-    background-color: blue;
-    color: white;
-}
-body{
-    background-color: pink;
-}*/
-
-.box{
-    height:150px;
-    width: 150px;
-        border: 1px solid black;
-        margin: 5px;
-        text-align: center;
-        background-color: aquamarine;
+.bgyellow{
+    background-color: chartreuse;
 }
