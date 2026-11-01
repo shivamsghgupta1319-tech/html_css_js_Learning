@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Currency Converter</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Currency Converter</h2>
+
+        <form id="currencyForm">
+
+            <div class="amount">
+
+                <p>Enter Amount</p>
+
+                <input
+                    type="number"
+                    id="amount"
+                    value="100"
+                    min="1"
+                    placeholder="Enter amount">
+
+            </div>
+
+            <div class="dropdown">
+
+                <div class="currency-box">
+
+                    <p>From</p>
+
+                    <div class="select-container">
+
+                        <img
+                            id="fromFlag"
+                            src="https://flagsapi.com/US/flat/64.png"
+                            alt="From Currency">
+
+                        <select id="fromCurrency" name="from">
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="swap-btn"
+                    id="swapBtn">
+
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                </button>
+
+
+                <div class="currency-box">
+
+                    <p>To</p>
+
+                    <div class="select-container">
+
+                        <img
+                            id="toFlag"
+                            src="https://flagsapi.com/IN/flat/64.png"
+                            alt="To Currency">
+
+                        <select id="toCurrency" name="to">
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="msg" id="message">
+                Getting exchange rate...
+            </div>
+
+
+            <button
+                type="submit"
+                class="exchange-btn">
+
+                Get Exchange Rate
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <script src="codes.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
