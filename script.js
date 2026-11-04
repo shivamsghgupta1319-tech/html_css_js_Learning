@@ -1,279 +1,72 @@
- const BASE_URL =
-    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
+//console.log("helllo world")  arithimatic operators
 
-const FALLBACK_URL =
-    "https://latest.currency-api.pages.dev/v1/currencies";
+/*let a= 5;
+let b=7;
+console.log("a=", a,"&b=",b);
+console.log("a+b=", a+b);
+console.log("a-b=", a-b);
+console.log("a*b=", a*b);
+console.log("a/b=", a/b);
+console.log("a%b=", a%b);
+console.log("a**b=", a**b);*/
 
+//unary operator
 
-const fromCurrency =
-    document.getElementById("fromCurrency");
+/*let a= 5;
+let b=7;
+console.log("a=", a,"&b=",b);
+console.log("a++=",a++);
+console.log("a=",a);
+console.log("a--=",a--);*/
 
-const toCurrency =
-    document.getElementById("toCurrency");
+//Assignment operator
+// =,+=,-=,*=,%=,**=.
+/*let a= 5;
+let b=7;
+//a +=4;
+a -=4;
+a *=4;
+a /=4;
+a **=4;
+a %=4;
 
-const amount =
-    document.getElementById("amount");
+console.log("a=", a,"&b=",b);
+console.log("a=",a);*/
 
-const message =
-    document.getElementById("message");
 
-const form =
-    document.getElementById("currencyForm");
+//comparison operator  ==(equal to)  ===(equal to &type)!=(not  equal to )   !==(not equal to &type)
 
-const swapBtn =
-    document.getElementById("swapBtn");
+/*let a= 5;
+let b=2;
 
-const fromFlag =
-    document.getElementById("fromFlag");
+console.log("5==2",a==b);
+console.log("5!=2",a!=b);
+console.log("5===2",a===b);
+console.log("5!==2",a!==b);
+console.log("5<=2",a<=b);
+console.log("5>=2",a>=b);*/
 
-const toFlag =
-    document.getElementById("toFlag");
+// Logical operator  logical and (&&)  logical or (||) logicqal not (!)
 
 
-for (let currency in countryList) {
 
-    const optionFrom =
-        document.createElement("option");
+let a=9;
+let b=7;
+/*let cond1 =a>b;
+let cond2 =a===9;*/
 
-    optionFrom.value = currency;
-    optionFrom.innerText = currency;
 
-    if (currency === "USD") {
-        optionFrom.selected = true;
-    }
+//console.log("cond1&&cond2=",a<b  &&a===9);
+//console.log("cond1||cond2=",a<b ||a===9);
+//console.log("!(6<5)=",!(a<b ,!a<b));
 
-    fromCurrency.appendChild(optionFrom);
 
 
-    const optionTo =
-        document.createElement("option");
 
-    optionTo.value = currency;
-    optionTo.innerText = currency;
 
-    if (currency === "INR") {
-        optionTo.selected = true;
-    }
 
-    toCurrency.appendChild(optionTo);
-}
 
 
-function updateFlag(select, image) {
 
-    const currency = select.value;
 
-    const countryCode =
-        countryList[currency];
 
-    image.src =
-        `https://flagsapi.com/${countryCode}/flat/64.png`;
-}
-
-
-async function getRates(currency) {
-
-    const code =
-        currency.toLowerCase();
-
-    const url =
-        `${BASE_URL}/${code}.json`;
-
-    try {
-
-        const response =
-            await fetch(url);
-
-        if (!response.ok) {
-            throw new Error("Primary API failed");
-        }
-
-        return await response.json();
-
-    } catch (error) {
-
-        const fallback =
-            `${FALLBACK_URL}/${code}.json`;
-
-        const response =
-            await fetch(fallback);
-
-        if (!response.ok) {
-            throw new Error("API unavailable");
-        }
-
-        return await response.json();
-    }
-}
-
-
-async function convertCurrency() {
-
-    const value =
-        Number(amount.value);
-
-    if (!value || value <= 0) {
-
-        message.innerText =
-            "Please enter a valid amount.";
-
-        return;
-    }
-
-
-    const from =
-        fromCurrency.value.toLowerCase();
-
-    const to =
-        toCurrency.value.toLowerCase();
-
-
-    if (from === to) {
-
-        message.innerText =
-            `${value} ${fromCurrency.value} = ${value.toFixed(2)} ${toCurrency.value}`;
-
-        return;
-    }
-
-
-    message.innerText =
-        "Loading exchange rate...";
-
-
-    try {
-
-        const data =
-            await getRates(from);
-
-
-        const rates =
-            data[from];
-
-
-        if (!rates) {
-            throw new Error("Currency data not found");
-        }
-
-
-        const rate =
-            rates[to];
-
-
-        if (!rate) {
-            throw new Error("Exchange rate not found");
-        }
-
-
-        const result =
-            value * rate;
-
-
-        message.innerText =
-            `${value} ${fromCurrency.value} = ${result.toFixed(2)} ${toCurrency.value}`;
-
-    } catch (error) {
-
-        console.error(error);
-
-        message.innerText =
-            "Unable to get exchange rate.";
-
-    }
-}
-
-
-fromCurrency.addEventListener(
-    "change",
-    function () {
-
-        updateFlag(
-            fromCurrency,
-            fromFlag
-        );
-
-        convertCurrency();
-    }
-);
-
-
-toCurrency.addEventListener(
-    "change",
-    function () {
-
-        updateFlag(
-            toCurrency,
-            toFlag
-        );
-
-        convertCurrency();
-    }
-);
-
-
-amount.addEventListener(
-    "input",
-    function () {
-
-        if (amount.value !== "") {
-            convertCurrency();
-        }
-
-    }
-);
-
-
-form.addEventListener(
-    "submit",
-    function (event) {
-
-        event.preventDefault();
-
-        convertCurrency();
-
-    }
-);
-
-
-swapBtn.addEventListener(
-    "click",
-    function () {
-
-        const temp =
-            fromCurrency.value;
-
-        fromCurrency.value =
-            toCurrency.value;
-
-        toCurrency.value =
-            temp;
-
-
-        updateFlag(
-            fromCurrency,
-            fromFlag
-        );
-
-        updateFlag(
-            toCurrency,
-            toFlag
-        );
-
-
-        convertCurrency();
-
-    }
-);
-
-
-updateFlag(
-    fromCurrency,
-    fromFlag
-);
-
-updateFlag(
-    toCurrency,
-    toFlag
-);
-
-convertCurrency();
