@@ -1,72 +1,61 @@
-//console.log("helllo world")  arithimatic operators
+const display = document.getElementById("display");
 
-/*let a= 5;
-let b=7;
-console.log("a=", a,"&b=",b);
-console.log("a+b=", a+b);
-console.log("a-b=", a-b);
-console.log("a*b=", a*b);
-console.log("a/b=", a/b);
-console.log("a%b=", a%b);
-console.log("a**b=", a**b);*/
+function appendValue(value) {
+    display.value += value;
+}
 
-//unary operator
+function clearDisplay() {
+    display.value = "";
+}
 
-/*let a= 5;
-let b=7;
-console.log("a=", a,"&b=",b);
-console.log("a++=",a++);
-console.log("a=",a);
-console.log("a--=",a--);*/
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
+}
 
-//Assignment operator
-// =,+=,-=,*=,%=,**=.
-/*let a= 5;
-let b=7;
-//a +=4;
-a -=4;
-a *=4;
-a /=4;
-a **=4;
-a %=4;
+function calculate() {
+    try {
+        if (display.value === "") {
+            return;
+        }
 
-console.log("a=", a,"&b=",b);
-console.log("a=",a);*/
+        let expression = display.value;
 
+        // Percentage calculation
+        expression = expression.replace(/(\d+(?:\.\d+)?)%/g, "($1/100)");
 
-//comparison operator  ==(equal to)  ===(equal to &type)!=(not  equal to )   !==(not equal to &type)
+        display.value = eval(expression);
+    } 
+    catch (error) {
+        display.value = "Error";
+    }
+}
 
-/*let a= 5;
-let b=2;
+// Keyboard support
+document.addEventListener("keydown", function(event) {
 
-console.log("5==2",a==b);
-console.log("5!=2",a!=b);
-console.log("5===2",a===b);
-console.log("5!==2",a!==b);
-console.log("5<=2",a<=b);
-console.log("5>=2",a>=b);*/
+    const key = event.key;
 
-// Logical operator  logical and (&&)  logical or (||) logicqal not (!)
+    if (
+        (key >= "0" && key <= "9") ||
+        key === "+" ||
+        key === "-" ||
+        key === "*" ||
+        key === "/" ||
+        key === "."
+    ) {
+        appendValue(key);
+    }
 
+    else if (key === "Enter" || key === "=") {
+        calculate();
+    }
 
+    else if (key === "Backspace") {
+        deleteLast();
+    }
 
-let a=9;
-let b=7;
-/*let cond1 =a>b;
-let cond2 =a===9;*/
+    else if (key === "Escape") {
+        clearDisplay();
+    }
 
-
-//console.log("cond1&&cond2=",a<b  &&a===9);
-//console.log("cond1||cond2=",a<b ||a===9);
-//console.log("!(6<5)=",!(a<b ,!a<b));
-
-
-
-
-
-
-
-
-
-
-
+});

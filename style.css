@@ -1,7 +1,8 @@
- * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -9,177 +10,81 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, royalblue, purple);
+    background: linear-gradient(135deg, rgb(255, 0, 102), rgb(139, 0, 56));
+}
+
+.calculator {
+    width: 330px;
     padding: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 430px;
-    background: white;
-    padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 15px 40px black;
-}
-
-.container h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 28px;
-    color: darkblue;
-}
-
-.amount p,
-.currency-box p {
-    font-size: 15px;
-    font-weight: bold;
-    color: dimgray;
-    margin-bottom: 8px;
-}
-
-.amount input {
-    width: 100%;
-    height: 50px;
-    border: 2px solid lightgray;
-    border-radius: 10px;
-    padding: 0 15px;
-    font-size: 17px;
-    outline: none;
-}
-
-.amount input:focus {
-    border-color: royalblue;
-}
-
-.dropdown {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-top: 25px;
-}
-
-.currency-box {
-    flex: 1;
-}
-
-.select-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    height: 50px;
-    padding: 5px 8px;
-    border: 2px solid lightgray;
-    border-radius: 10px;
-    background: white;
-}
-
-.select-container img {
-    width: 32px;
-    height: 24px;
-    object-fit: cover;
-    border-radius: 3px;
-}
-
-.select-container select {
-    width: 100%;
-    border: none;
-    outline: none;
-    background: transparent;
-    font-size: 15px;
-    cursor: pointer;
-    color: black;
-}
-
-.swap-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: none;
-    background: royalblue;
-    color: white;
-    cursor: pointer;
-    margin-top: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-}
-
-.swap-btn:hover {
-    transform: rotate(180deg);
     background: purple;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
-.msg {
-    margin: 25px 0;
-    padding: 15px;
-    text-align: center;
-    background: aliceblue;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: darkblue;
-    min-height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.exchange-btn {
+#display {
     width: 100%;
-    height: 52px;
+    height: 80px;
+    margin-bottom: 20px;
+    padding: 15px;
     border: none;
-    border-radius: 10px;
-    background: linear-gradient(135deg, royalblue, purple);
+    outline: none;
+    border-radius: 12px;
+    background: black;
     color: white;
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 32px;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    background: darkgray;
+    color: white;
+    font-size: 20px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
-.exchange-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px gray;
+button:hover {
+    background: gray;
+    transform: scale(1.03);
 }
 
-.exchange-btn:active {
-    transform: translateY(0);
+button:active {
+    transform: scale(0.95);
 }
 
-@media (max-width: 500px) {
+.operator {
+    background: orange;
+}
 
-    .container {
-        padding: 22px;
-        border-radius: 15px;
-    }
+.operator:hover {
+    background: darkorange;
+}
 
-    .container h2 {
-        font-size: 24px;
-    }
+.clear {
+    background: red;
+}
 
-    .dropdown {
-        gap: 6px;
-    }
+.clear:hover {
+    background: darkred;
+}
 
-    .select-container {
-        gap: 4px;
-        padding: 4px;
-    }
+.equal {
+    background: green;
+}
 
-    .select-container img {
-        width: 27px;
-        height: 20px;
-    }
+.equal:hover {
+    background: darkgreen;
+}
 
-    .select-container select {
-        font-size: 13px;
-    }
-
-    .swap-btn {
-        width: 36px;
-        height: 36px;
-    }
+.zero {
+    grid-column: span 2;
 }
