@@ -1,72 +1,58 @@
-//console.log("helllo world")  arithimatic operators
+// question -=- You are creating a website for your college .Create a class user with propertides ,name & email.It also has a method called view data()that alllows user to view website data.
 
-/*let a= 5;
-let b=7;
-console.log("a=", a,"&b=",b);
-console.log("a+b=", a+b);
-console.log("a-b=", a-b);
-console.log("a*b=", a*b);
-console.log("a/b=", a/b);
-console.log("a%b=", a%b);
-console.log("a**b=", a**b);*/
 
-//unary operator
+/*let DATA ="secret information";
+class User{
+constructor(name,email) {
+this.name=name;
+this.email=email;
 
-/*let a= 5;
-let b=7;
-console.log("a=", a,"&b=",b);
-console.log("a++=",a++);
+}
+
+viewData(){
+    console.log("data=",DATA);
+
+
+}
+}
+
+class Admin extends User{
+ constructor(name,email){
+    super(name,email);
+
+ }
+
+    editData(){
+        DATA="some  new value ";
+    }
+
+
+    }
+
+let student1=new User("Nishkarsh","abc@gmail.com");
+let student2=new User("Prashant ","bcd@gmail.com"); 
+ let teacher1=new User("Dean","dean@gmail.com");
+let  admin1=new Admin ("admin","admin@gmail.com");*/    
+
+//  error handling 
+
+
+let  a =5;
+let b=  10;
 console.log("a=",a);
-console.log("a--=",a--);*/
-
-//Assignment operator
-// =,+=,-=,*=,%=,**=.
-/*let a= 5;
-let b=7;
-//a +=4;
-a -=4;
-a *=4;
-a /=4;
-a **=4;
-a %=4;
-
-console.log("a=", a,"&b=",b);
-console.log("a=",a);*/
-
-
-//comparison operator  ==(equal to)  ===(equal to &type)!=(not  equal to )   !==(not equal to &type)
-
-/*let a= 5;
-let b=2;
-
-console.log("5==2",a==b);
-console.log("5!=2",a!=b);
-console.log("5===2",a===b);
-console.log("5!==2",a!==b);
-console.log("5<=2",a<=b);
-console.log("5>=2",a>=b);*/
-
-// Logical operator  logical and (&&)  logical or (||) logicqal not (!)
-
-
-
-let a=9;
-let b=7;
-/*let cond1 =a>b;
-let cond2 =a===9;*/
-
-
-//console.log("cond1&&cond2=",a<b  &&a===9);
-//console.log("cond1||cond2=",a<b ||a===9);
-//console.log("!(6<5)=",!(a<b ,!a<b));
-
-
-
-
-
-
-
-
-
-
-
+console.log("b=",b);
+console.log("a+b=",a+b);
+console.log("a+b=",a+b);
+console.log("a+b=",a+b);
+try{
+console.log("a+b=",a+c);//  error 
+} catch (err){
+console.log(err);
+}
+   
+console.log("a+b=",a+b);
+console.log("a+b=",a+b);
+console.log("a+b=",a+b);
+console.log("a+b=",a+b);
+console.log("a+b=",a+b);
+ 
