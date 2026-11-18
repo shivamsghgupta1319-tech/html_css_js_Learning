@@ -3,9 +3,9 @@ INVERTIS UNIVERSITY, BAREILLY
 Department of Computer Science & Engineering
 JavaScript Programming Lab (BCS354)
 Student Name : Shivam Gupta | Roll No: 2510303486
-Assignment 02 - Question 2: Type Conversion
+Assignment 09 - Question 2: Form Validation Function
 ======================================================================
 
 --- Execution Output ---
-17
-73
+[]
+['Name is required']
