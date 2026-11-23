@@ -1,0 +1,32 @@
+<!--
+  Student Name: Shivam Gupta
+  Roll Number: 2510303486
+  Assignment: 11 - Task 02 (CSS Variables)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Variables</title>
+  <style>
+    :root {
+      --main-color: #1d3557;
+      --accent-color: #e63946;
+      --page-padding: 20px;
+    }
+    body {
+      color: var(--main-color);
+      padding: var(--page-padding);
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: var(--accent-color);
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Heading with Accent Color</h1>
+  <p>This body text uses the main color and the whole page uses page-padding defined in :root.</p>
+</body>
+</html>
