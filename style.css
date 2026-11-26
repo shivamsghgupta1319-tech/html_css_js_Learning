@@ -4,16 +4,20 @@
   Subject: HTML and CSS Introduction Lab (BCS352)
   University: Invertis University, Bareilly
 */
-:root {
-  --main-color: #1d3557;
-  --accent-color: #e63946;
-  --page-padding: 20px;
-}
+/* Auto-fill Minmax Gallery Grid */
 body {
-  color: var(--main-color);
-  padding: var(--page-padding);
   font-family: Arial, sans-serif;
+  margin: 20px;
 }
-h1 {
-  color: var(--accent-color);
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.photo-box {
+  background-color: #0f766e;
+  color: white;
+  padding: 40px 10px;
+  text-align: center;
+  border-radius: 6px;
 }
